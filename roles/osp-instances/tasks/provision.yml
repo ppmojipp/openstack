@@ -1,0 +1,32 @@
+---
+- hosts: workstation
+  tasks:
+
+  - name: Set variables
+    include_vars: ../vars/app2.yaml
+
+  - name: Show variables
+    debug: msg={{ instance_name }}
+
+  - name: Provision instance
+    import_tasks: main.yml
+
+  - name: Set variables
+    include_vars: ../vars/db.yaml
+
+  - name: Show variables
+    debug: msg={{ instance_name }}
+
+  - name: Provision instance
+    import_tasks: main.yml
+
+  - name: Set variables
+    include_vars: ../vars/frontend.yaml
+
+  - name: Show variables
+    debug: msg={{ instance_name }}
+
+  - name: Provision instance
+    import_tasks: main.yml
+
+...

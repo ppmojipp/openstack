@@ -1,0 +1,11 @@
+---
+- hosts: workstation
+  tasks:
+
+  - name: Set variables
+    include_vars: ../vars/app1.yaml
+
+  - name: Provision instance
+    import_tasks: main.yml
+
+...
